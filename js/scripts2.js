@@ -177,7 +177,7 @@ function cambiarTotal(){
 }
 
 function redondearTotal(total){
-
+    return(Math.round(total * 100) / 100);
 }
 
 function cambiarDiv(){
@@ -216,7 +216,7 @@ function guardarPedido(){
     pedido.bebidaPequena = bebidaPequenaS;
     pedido.cafe = cafeS;
     pedido.postre = postreS;
-    pedido.total = inputTotal.value;
+    pedido.total = redondearTotal(inputTotal.value);
     pedido.sugerencias = divSugerencias.textContent;
 
     msg+='<div class="col-5">';
